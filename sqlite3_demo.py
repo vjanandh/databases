@@ -1,7 +1,17 @@
 import sqlite3 as sql
+import sys
+import os
+
+# Add the root directory to sys.path
+base_dir = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(base_dir)
+
+# DB directory
+db_dir = os.path.join(base_dir, 'db')
 
 # Create a connection to the database on disk
-con = sql.connect("tutorial.db")
+file = os.path.join(db_dir, "tutorial.db")
+con = sql.connect(file)
 
 # Create a cursor to execute SQL statements and fetch results
 cur = con.cursor()
