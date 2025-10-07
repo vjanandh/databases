@@ -8,7 +8,7 @@ cur = con.cursor()
 
 # Check if the table already exists or else create one
 res = cur.execute("SELECT name FROM sqlite_master")
-if res.fetchone() is None:
+if res.fetchone() is not None:
     # Print all rows iteratively
     for row in cur.execute("SELECT year, title, score FROM movies ORDER BY year"):
         print(row)
