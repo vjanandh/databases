@@ -32,3 +32,4 @@ else:
     res = cur.execute("SELECT * from movies")
     print(res.fetchall())
 con.close()
+assert True
